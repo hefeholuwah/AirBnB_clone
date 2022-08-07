@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Module for the entry point of the command interpreter."""
 
@@ -147,12 +146,12 @@ class HBNBCommand(cmd.Cmd):
             if words[0] not in storage.classes():
                 print("** class doesn't exist **")
             else:
-                n_l = [str(obj) for key, obj in storage.all().items()
-                    if type(obj).__name__ == words[0]]
-                print(n_l)
+                l = [str(obj) for key, obj in storage.all().items()
+                     if type(obj).__name__ == words[0]]
+                print(l)
         else:
-            n_l = [str(obj) for key, obj in storage.all().items()]
-            print(n_l)
+            l = [str(obj) for key, obj in storage.all().items()]
+            print(l)
 
     def do_count(self, line):
         """Counts the instances of a class.
